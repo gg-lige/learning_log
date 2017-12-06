@@ -1,4 +1,4 @@
-192.168.16.177:
+192.168.16.178:
   stage: deploy
   script:
   #- ps -ef | grep server.py | grep -v grep | awk  '{print $2}' | xargs  kill -9 >/dev/null 2>&1
@@ -7,5 +7,5 @@
   only:
   - master
   tags:
-  - 192.168.16.177
+  - 192.168.16.178
 
