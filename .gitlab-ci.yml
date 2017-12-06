@@ -2,7 +2,7 @@
   stage: deploy
   script:
   #- ps -ef | grep server.py | grep -v grep | awk  '{print $2}' | xargs  kill -9 >/dev/null 2>&1
-  - cp -r * /opt
+  - cp -r * /opt/learning_log
   #- nohup python3 /home/gitlab-runner/qualitymonitoring/server.py &>/dev/null &
   only:
   - master
