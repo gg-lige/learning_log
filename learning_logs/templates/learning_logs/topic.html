@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning log</title>
+</head>
+<body>
+    {% extends "learning_logs/base.html" %}
+
+    {% block content %}
+        <p>Topic:{{ topic }}</p>   <!--view.py 中传过来的上下文context中-->
+        <p>Entries:</p>
+        <ul>
+            {% for entry in entries %}
+                <li>
+                    <p>{{ entry.date_added|date:'M d,Y H:i' }}</p> <!--  |模板过滤器，对模板变量修改的函数-->
+                    <p>{{ entry.text|linebreaks }}</p>  <!--  linebreaks将包含换行符的长条目转换为浏览器能够理解的形式，以免显示一个不间断的文本块-->
+                </li>
+            {% empty %}
+                <li>There are no entries for this project yet.</li>
+            {% endfor %}
+        </ul>
+
+
+    {% endblock content %}
+
+</body>
+</html>
